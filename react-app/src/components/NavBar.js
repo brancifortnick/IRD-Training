@@ -1,33 +1,50 @@
 import React, { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom'; // <-- import useLocation
 import LogoutButton from './auth/LogoutButton';
 import { useSelector, useDispatch } from 'react-redux';
-import './NavBar.css'; // Assuming you have a CSS file for styling the NavBar
+import './NavBar.css';
 import { demoLogin } from '../store/session';
 
-
-
-
 const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Example state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch()
-  const history = useHistory()
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation(); // <-- get current location
 
   const demoLoginButton = async (e) => {
     e.preventDefault();
     dispatch(demoLogin());
-    setIsLoggedIn(true)
+    setIsLoggedIn(true);
     history.push("/");
   };
-
-
 
   return (
     <nav className='nav-bar'>
       <div className='nav-links'>
+        {!user && (
+          <div className='signup'>
+            <NavLink to='/signup' exact={true} activeClassName='active'>
+              Sign Up
+            </NavLink>
+          </div>
+        )}
 
-        {user ? (
+
+        {!user && !isLoggedIn && location.pathname !== '/login' ? (
+          <button
+            className="demo-login"
+            onClick={demoLoginButton}
+          >
+            Guest Login
+          </button>
+        ) : user === null && location.pathname !== '/login' ? (
+          <NavLink to='/login'>
+            Login
+          </NavLink>
+        ) : null}
+
+        {isLoggedIn && user ? (
           <div>
             <section>
               <NavLink to='/' exact={true} activeClassName='active'>
@@ -50,34 +67,8 @@ const NavBar = () => {
           </div>
         ) : null}
 
-
-        {!isLoggedIn && !user ? (
-          <div className='demo-login'>
-
-            <NavLink to='/login' exact={true} >
-              Login
-            </NavLink>
-
-
-            <button
-              sx={{ fontWeight: 550, backgroundColor: "#fb6c45", color: "white", "&:hover": { backgroundColor: "white", color: '#fb6c45' } }}
-              variant="contained"
-              className="demo-login"
-              onClick={demoLoginButton}
-            >
-              Guest Login
-            </button>
-
-
-
-          </div>
-        ) : null}
-
-
-        <div className='logout-component'>
         <LogoutButton />
       </div>
-      </div >
     </nav>
   );
 }

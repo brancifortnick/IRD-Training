@@ -2,7 +2,7 @@ FROM node:16.20.2 AS build-stage
 WORKDIR /react-app
 COPY react-app/. .
 # You have to set this because it should be set during build time.
-ENV REACT_BASE_APP_URL=https://in-room-dining.com/
+# ENV REACT_BASE_APP_URL=https://in-room-dining.com/
 # Build our React App
 RUN npm install
 RUN npm run build

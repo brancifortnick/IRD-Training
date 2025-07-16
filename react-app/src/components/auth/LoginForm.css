@@ -77,7 +77,7 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .login-btn:hover {
