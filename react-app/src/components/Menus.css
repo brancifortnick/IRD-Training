@@ -1,39 +1,71 @@
-.menu-discussion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .menus-container-outter-most {
-    padding: 0;
-    margin: 0;
-    background-repeat: no-repeat;
-    min-width: 400px;
-    width: 75%;
-    padding-left: 25%;
-    background-image: url(../assets/ird-breakfast.jpg);
-    background-repeat: repeat-x;
-    background-color: rgba(0, 0, 0, 0.295);
-    border-radius: 10px;
-    border: 3px solid black;
-    font-size: large;
-    color: rgb(0, 0, 0);
-}
-
-.menus-container-outter-most:hover {
-    margin: 0;
-
-
+    max-width: 750px;
+    margin: 40px auto;
+    background: #f9fafd;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    padding: 32px 32px 32px 32px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
 }
 
 .menus-inner-container {
-    padding: 10px;
-
-}
-
-li {
+    margin-bottom: 24px;
     list-style: none;
+    padding: 10px;
+    border: 2px solid black;
+    text-decoration: underline;
 }
-a{
-text-decoration-color: none;
+
+.menus-container-outter-most h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a3a5d;
+    margin-bottom: 18px;
+}
+
+.menus-container-outter-most h2 {
+    font-size: 1.2rem;
+    color: #2a5d8f;
+    margin-bottom: 10px;
+    margin-top: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.menus-container-outter-most h3,
+.menus-container-outter-most h4 {
+    color: #2a5d8f;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.menus-container-outter-most p,
+.menus-tip,
+.menu-discussion {
+    font-size: 1.08rem;
+    color: #3a4a5d;
+    margin-bottom: 14px;
+}
+
+.menus-container-outter-most ul,
+.menus-container-outter-most ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.menus-container-outter-most li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+strong {
+    color: #1a3a5d;
+}
+.overnight-policy {
+    background: #eaf3fb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }

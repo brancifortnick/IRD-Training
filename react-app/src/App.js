@@ -10,7 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import HomePage from './components/HomePage';
 import Menus from './components/Menus';
-import EmbededMenu from './components/EmbededMenu';
+
 import GeneralInformation from './components/GeneralInformation';
 import StepsOfService from './components/StepsOfService';
 import Standards from './components/Standards';

@@ -39,8 +39,16 @@ const NavBar = () => {
           ) : null}
 
         </div>
-
-
+        <div>
+          <NavLink to='/' exact={true} activeClassName='active'>
+            Home
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to='/steps-of-service'>
+            Steps of Service
+          </NavLink>
+        </div>
           <NavLink to='/menus' exact={true} activeClassName='active'>
             Menu
           </NavLink>
@@ -56,11 +64,7 @@ const NavBar = () => {
         <section>
           <a href="/general-information">General-Info</a>
         </section>
-          <div>
-            <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-            </NavLink>
-          </div>
+
 
         {/* <div>
           <NavLink to={`/users/${user.id}`} exact={true} activeClassName='active'>
@@ -71,11 +75,11 @@ const NavBar = () => {
 
 
 
+
+      </div>
+      <div>
         <LogoutButton />
       </div>
-
-
-
     </nav>
 
   );

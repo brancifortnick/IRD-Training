@@ -1,58 +1,50 @@
-import React from 'react';
+import React from "react";
+import './Standards.css';
 
 
 const Standards = () => {
-
     return (
-        <div className='standards-container'>
-            <div className='standards-content'>
-                <h1>Order Taking Forbes Standards</h1>
-                <h4>
-                    <ol>
-                        <li>
-                            Answer Telephone within three rings or within 10 seconds with an appropriate greeting.
-                        </li>
-                        <li>
-                            If you must place guest on hold, ask for permission and wait for a response.(do no exceed 30 seconds or offer a callback)
-                        </li>
-                        <li>
-                            Know the menu!
-                            Be able to answer questions about the menu, including ingredients, preparation methods, and recommendations.
-                            Use menu questions to obtain guest allergy information as this is another critical standard.
-                        </li>
-                        <li>
-                            Obtain relevant information from the guest.
-                            Example: Obtain cooking instructions for Steak dishes, accompaniments, and always accommadate off menu requests (if possible and if they are reasonable).
-                        </li>
-                        <li>
-                            Offer dessert to be served at meals completion or at a later time.
-                        </li>
-                        <li>
-                            Repeat the order back to the guest to ensure accuracy. Advise delivery time.
-                        </li>
-                        <li>
-                            Thank the guest and wish them well.
-                        </li>
+        <div className="standards-container">
+            <h1>Service Standards</h1>
+            <p>
+                These are the core standards every team member should follow to ensure a world-class guest experience at Four Seasons.
+            </p>
 
-                    </ol>
-                </h4>
-                <h2>Pros to Phone Calls</h2>
-                <p>
-                    Use the phone call to build rapport with the guest.  This gives us opportunity to connect with the guest and build a relationship.
-                    Most importantly use the call to upsell beverages to begin the meal, or starters for example.  Use wine and cocktail knowledge to offer a nightcap or evening beverage.
-                    Suggest a dessert to be served at the end of the meal, or at a later time.
-                </p>
-                <p>
-               I can confidently say I sell 5-10 evians every day or two just by offering the guest a bottle of water to start their meal. 
-                </p>
-            </div>
+            <section>
+                <h2>Professional Appearance</h2>
+                <ul>
+                    <li>Uniform is clean, pressed, and complete.</li>
+                    <li>Personal grooming meets company standards.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Guest Interaction</h2>
+                <ul>
+                    <li>Always greet guests with a smile and eye contact.</li>
+                    <li>Use the guest's name whenever possible.</li>
+                    <li>Be attentive and anticipate guest needs.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Service Delivery</h2>
+                <ul>
+                    <li>Orders are delivered promptly and accurately.</li>
+                    <li>Special requests are handled with care and urgency.</li>
+                    <li>Follow up with guests to ensure satisfaction.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Cleanliness & Organization</h2>
+                <ul>
+                    <li>Work areas are kept clean and organized at all times.</li>
+                    <li>Tables are set and cleared according to standards.</li>
+                </ul>
+            </section>
         </div>
-
-    )
-
-}
-
-
-
+    );
+};
 
 export default Standards;

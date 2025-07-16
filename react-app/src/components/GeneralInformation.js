@@ -1,100 +1,86 @@
-import React,    {useState} from 'react';
-import { useHistory } from 'react-router-dom';
-import EmbededMenu from './EmbededMenu';
-import OverNightFlow from './OverNightFlow';
-import './GeneralInformation.css'
-
+import React from 'react';
+import './GeneralInformation.css';
 
 const GeneralInformation = () => {
-
     return (
-
-        <div className='general-info-container'>
-            <heading>
-                Computer Focus
-            </heading>
+        <div className="general-info-container">
+            <h2 className="section-title">Computer Focus</h2>
             <h1>General Information</h1>
-            <text>
-
-                Getting Started with the Four Seasons Computer System, Mircos POS.
-                What you will want to do after first logging in to the desktop is to navigate to the windows apps.
-
-                You may find this by opening a chrome or edge browser and typing in the address bar "windows apps" or "windows applications".  This will take you to a page that has all of the applications that are available to you.  You can also find this by clicking on the windows icon in the bottom left corner of your screen and then clicking on the "All Apps" button.  From there, you can scroll through the list of applications or use the search bar to find a specific application.
-                
-                <br />
-                From there, you can click on the application you want to use and it will open in a new window.  You can also right click on the application and pin it to your taskbar for easy access in the future. 
-                The Application we will be using to see guests' orders from cell/tablet devices will look like a texting app, and is called messenger.  We monitor this throughout our shift for incoming orders,pick up requests, and front desk occasionally adds us into chats where guests have questions.
-            </text>
-            <div>
+            <section>
+                <h3>Getting Started with the Four Seasons Computer System (Micros POS)</h3>
                 <p>
-                    <h1>
-                        Shortcut to getting up and running
-                    </h1>
-
-                    <div>
-                        Navigate to microsoft edge, either on your desktop or use search (bottom screen)
-                        Locate Microsoft Apps [Top left of your screen in Edge, else top right will allow you to sign into your four seasons email giving you proper access]
-                    </div>
-                    <div>
-                        Messenger is the application guests use to place tablet, cell phone, and really anytype of text/chat into, so it is our duty to constantly monitor the computer.  Checking on the computer after each order, and using HOT SOS as a tool to see incoming order/requests helps the success percentage of the shift.
-                    </div>
-                    <div>
-                        It is important to note that, 3-4 orders can turn into 7-8 quickly so constantly beeing in contact with FOM,Overnight Manager, Our Managers is crucial.  Utilize the 'slow' period to knock out as much of the side work sheet as possible because the overnight is very difficult to judge order  pops, and entering,setting,running,amongst other duties takes time no matter how organized/fast you are.
-                        :)
-                    </div>
+                    After logging in to the desktop, navigate to the Windows apps. You can do this by:
                 </p>
+                <ul>
+                    <li>
+                        Opening Chrome or Edge and typing <strong>"windows apps"</strong> or <strong>"windows applications"</strong> in the address bar.
+                    </li>
+                    <li>
+                        Clicking the Windows icon (bottom left) and selecting <strong>All Apps</strong>. Use the search bar or scroll to find your application.
+                    </li>
+                </ul>
+                <p>
+                    Click the application you want to use to open it. You can also right-click and pin it to your taskbar for easy access.
+                </p>
+                <p>
+                    The application we use to see guest orders from cell/tablet devices is called <strong>Messenger</strong>. It looks like a texting app. Monitor Messenger throughout your shift for incoming orders, pick-up requests, and guest questions.
+                </p>
+            </section>
 
-                <div>
-                    Micros POS
-                    <p>
-                        EMPLOYEE MEALS:
-                        Overnight employees may choose one meal, one beverage from the fridge, cookies or fruit.  The forms are filled out and left in the IRD window.
-                        By 12-12:15AM each night we enter the meals into the micros for the overnight chef to prepare to cook for staff.
-                    </p>
-                    <h1>How to Ring in Employee Meals</h1>
-                    <h2>Steps Below:</h2>
-                    <div>
-                        Begin Room:
-                        Use room # 5603 (we use this because it is a non existant room)
-                        # of guests = 0 for staff meals
-                        no delivery charge
-                        Organize pile of meal slips by time and enter into Mircos.  Ensure to include name of employee and delivery time using the 'delivery time' button located near the bottom of the screen(its gray)
-                        after inputting all order we can now close the employee check
-                    </div>
-                    <h1>Closing Employee Meals[will be under room #5603]</h1>
-                    <div>
-                        Go to room # 5603 and ensure it is the overnight meals you've just rang in. (sometimes you may find amenity rooms/PM standard testing for meals, etc under the same room #---you will leave these for management to handle for now)
-                        Go to Payment screen and locate the Remove auto service charge button(click this)
-                        Once clicked go to the right side of the screen and located house charges(click this tab)
-                        You should now see a new screen with many options(in the top row locate Employee Meal)- Click this and enter this text(OVN MEALS)
-                        Next click house charge print middle left of the screen.
-                        The check may show a balance, Becca will handle on backend.
-                        Go back into the check
-                        Navigate to payment screen
-                        Go to the right side of the screen(house charges)
-                        once you click house charges look towards the bottom center of the screen and print house charge final.
-                        Click 0.00 on micros screen and your complete.
+            <section>
+                <h3>Shortcut to Getting Up and Running</h3>
+                <ul>
+                    <li>
+                        Open Microsoft Edge from your desktop or search bar.
+                    </li>
+                    <li>
+                        Locate <strong>Microsoft Apps</strong> (top left in Edge). If needed, sign into your Four Seasons email for access.
+                    </li>
+                    <li>
+                        <strong>Messenger</strong> is used by guests to place orders via tablet, cell phone, or chat. Constantly monitor the computer for new orders.
+                    </li>
+                    <li>
+                        Use <strong>HOT SOS</strong> to track incoming orders and requests.
+                    </li>
+                    <li>
+                        Stay in contact with FOM, Overnight Manager, and other managers. Use slow periods to complete side work, as order volume can increase quickly.
+                    </li>
+                </ul>
+            </section>
 
-                        The house charge print(first one printed(longer copy)) goes into the Vocera Box for Becca to sign, the finalized copy goes into the check holder containing all checks.
-                    </div>
-                </div>
-            </div>
-            
-        
+            <section>
+                <h3>Micros POS: Employee Meals</h3>
+                <p>
+                    Overnight employees may choose one meal, one beverage from the fridge, and cookies or fruit. Fill out the meal forms and leave them in the IRD window.
+                </p>
+                <ul>
+                    <li>
+                        By 12:00–12:15 AM, enter the meals into Micros for the overnight chef to prepare.
+                    </li>
+                </ul>
+                <h4>How to Ring in Employee Meals</h4>
+                <ol>
+                    <li>Begin Room: Use room #5603 (a non-existent room for staff meals).</li>
+                    <li># of guests = 0 for staff meals. No delivery charge.</li>
+                    <li>Organize meal slips by time and enter into Micros. Include employee name and delivery time (use the "delivery time" button near the bottom of the screen).</li>
+                    <li>After inputting all orders, close the employee check.</li>
+                </ol>
+                <h4>Closing Employee Meals (Room #5603)</h4>
+                <ol>
+                    <li>Go to room #5603 and confirm it’s the overnight meals you just rang in.</li>
+                    <li>Go to Payment screen and click <strong>Remove auto service charge</strong>.</li>
+                    <li>On the right, click <strong>House Charges</strong>. In the top row, select <strong>Employee Meal</strong> and enter "OVN MEALS".</li>
+                    <li>Click <strong>House Charge Print</strong> (middle left).</li>
+                    <li>The check may show a balance; Becca will handle this on the backend.</li>
+                    <li>Go back into the check, return to Payment, and print <strong>House Charge Final</strong> (bottom center).</li>
+                    <li>Click 0.00 on the Micros screen to complete.</li>
+                    <li>
+                        The first (longer) house charge print goes into the Vocera Box for Becca to sign. The finalized copy goes into the check holder with all checks.
+                    </li>
+                </ol>
+            </section>
         </div>
-
-
-)
-
-
-
-
-
-
-
-
-
-
-}
+    );
+};
 
 export default GeneralInformation;
