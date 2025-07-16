@@ -10,7 +10,6 @@ const HomePage = () => {
                 src={bgVideo}
                 autoPlay
                 loop
-
                 playsInline
             />
             <div className="homepage-content">

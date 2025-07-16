@@ -1,59 +1,64 @@
-import React, { useState } from 'react';
-import { NavLink, useHistory, useLocation } from 'react-router-dom'; // <-- import useLocation
+import React from 'react';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector, useDispatch } from 'react-redux';
 import './NavBar.css';
 import { demoLogin } from '../store/session';
-
 const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
-  const location = useLocation(); // <-- get current location
+  const location = useLocation();
 
   const demoLoginButton = async (e) => {
     e.preventDefault();
-    dispatch(demoLogin());
-    setIsLoggedIn(true);
+    await dispatch(demoLogin());
     history.push("/");
+  };
+
+  const onLoginClick = () => {
+    history.push('/login');
+  };
+
+  const onSignupClick = () => {
+    history.push('/signup');
   };
 
   return (
     <nav className='nav-bar'>
       <div className='nav-links'>
+        {/* Show buttons only if not logged in */}
         {!user && (
-          <div className='signup'>
-            <NavLink to='/signup' exact={true} activeClassName='active'>
-              Sign Up
-            </NavLink>
-          </div>
+          <>
+            <button className="demo-login nav-btn-white" onClick={demoLoginButton}>
+              Guest Login
+            </button>
+            {/* Show Login unless already on /login */}
+            {location.pathname !== '/login' && (
+              <button className="login-btn nav-btn-white" onClick={onLoginClick}>
+                Login
+              </button>
+            )}
+            {/* Show Sign Up unless already on /signup */}
+            {location.pathname !== '/signup' && (
+              <button className="signup nav-btn-white" onClick={onSignupClick}>
+                Sign Up
+              </button>
+            )}
+          </>
         )}
 
-
-        {!user && !isLoggedIn && location.pathname !== '/login' ? (
-          <button
-            className="demo-login"
-            onClick={demoLoginButton}
-          >
-            Guest Login
-          </button>
-        ) : user === null && location.pathname !== '/login' ? (
-          <NavLink to='/login'>
-            Login
-          </NavLink>
-        ) : null}
-
-        {isLoggedIn && user ? (
-          <div>
-            <section>
+        {/* If logged in, show nav links and logout */}
+        {user && (
+          <>
+            <div>
               <NavLink to='/' exact={true} activeClassName='active'>
                 Home
               </NavLink>
-            </section>
-            <section>
+            </div>
+            <div>
               <NavLink to="/general-information">General-Info</NavLink>
-            </section>
+            </div>
             <section>
               <NavLink to='/steps-of-service'>
                 Steps of Service
@@ -64,10 +69,9 @@ const NavBar = () => {
                 Menu
               </NavLink>
             </section>
-          </div>
-        ) : null}
-
-        <LogoutButton />
+            <LogoutButton />
+          </>
+        )}
       </div>
     </nav>
   );
