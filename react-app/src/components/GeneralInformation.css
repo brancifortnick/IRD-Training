@@ -1,0 +1,11 @@
+.general-info-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+padding: 4px;
+
+}
+.general-info-container:hover{
+background-color: rgb(173, 168, 123);
+color:white;
+}
