@@ -21,7 +21,7 @@ const HomePage = () => {
 
             }}>
       
-
+                //! moving below sections into navbar component
            
 
                 <section>
