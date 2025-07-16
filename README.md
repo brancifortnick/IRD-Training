@@ -1,3 +1,4 @@
-# Start of an ever evolving training application
-- IRD FSPHL
 [In Room Dining](https://in-room-dining.com)
+==============================================
+start of a training applicaton, just started, much more to come
+
