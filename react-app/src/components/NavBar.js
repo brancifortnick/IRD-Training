@@ -26,8 +26,39 @@ const NavBar = () => {
   return (
     <nav className='nav-bar'>
       <div className='nav-links'>
-        <div className='demo-login'>
-          {!user ? (
+
+        {user ? (
+          <div>
+            <section>
+              <NavLink to='/' exact={true} activeClassName='active'>
+                Home
+              </NavLink>
+            </section>
+            <section>
+              <NavLink to="/general-information">General-Info</NavLink>
+            </section>
+            <section>
+              <NavLink to='/steps-of-service'>
+                Steps of Service
+              </NavLink>
+            </section>
+            <section>
+              <NavLink to='/menus' exact={true} activeClassName='active'>
+                Menu
+              </NavLink>
+            </section>
+          </div>
+        ) : null}
+
+
+        {!isLoggedIn && !user ? (
+          <div className='demo-login'>
+
+            <NavLink to='/login' exact={true} >
+              Login
+            </NavLink>
+
+
             <button
               sx={{ fontWeight: 550, backgroundColor: "#fb6c45", color: "white", "&:hover": { backgroundColor: "white", color: '#fb6c45' } }}
               variant="contained"
@@ -36,52 +67,18 @@ const NavBar = () => {
             >
               Guest Login
             </button>
-          ) : null}
 
-        </div>
-        <div>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to='/steps-of-service'>
-            Steps of Service
-          </NavLink>
-        </div>
-          <NavLink to='/menus' exact={true} activeClassName='active'>
-            Menu
-          </NavLink>
 
-        {!isLoggedIn && !user ? (
-          <div>
-            <NavLink to='/login' exact={true} activeClassName='active'>
-              Login
-            </NavLink>
+
           </div>
         ) : null}
- 
-        <section>
-          <a href="/general-information">General-Info</a>
-        </section>
 
 
-        {/* <div>
-          <NavLink to={`/users/${user.id}`} exact={true} activeClassName='active'>
-            Profile
-          </NavLink>
-        </div>
-        )} */}
-
-
-
-
-      </div>
-      <div>
+        <div className='logout-component'>
         <LogoutButton />
       </div>
+      </div >
     </nav>
-
   );
 }
 
