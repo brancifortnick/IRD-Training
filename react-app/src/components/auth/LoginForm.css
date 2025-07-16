@@ -1,13 +1,13 @@
-.login-form-container {
+.login-form-bg {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url(../../assets/pool-night.jpg);
+    background-size: cover;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    justify-content: center;
 }
-a,a.active{
-text-decoration: none;
-}
-.login-form {
+.login-form-container {
     background: rgba(20, 32, 50, 0.92);
     padding: 36px 32px 32px 32px;
     border-radius: 16px;
@@ -20,6 +20,12 @@ text-decoration: none;
     align-items: center;
 }
 
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .login-form h2 {
     margin-bottom: 24px;
     font-size: 2rem;
@@ -78,14 +84,4 @@ text-decoration: none;
     background: #fff;
     color: #fb6c45;
     border: 1px solid #fb6c45;
-}
-
-.login-form-bg {
-    min-height: 100vh;
-    min-width: 100vw;
-
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

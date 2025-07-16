@@ -1,20 +1,56 @@
 .nav-bar {
+  width: 100%;
+    background: #1a3a5d;
+    padding: 0 32px;
+    height: 64px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    /* Removed overflow */
+  }
+  
+  .nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    /* Allow wrapping if needed */
+    min-width: 0;
+  }
+  
+  .nav-links>div,
+  .nav-links>section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-width: 0;
+  }
 
-    background-color: rgb(10, 10, 10);
-
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-
+.nav-links a.active,
+.nav-links a:hover {
+  background: #b6a9a5;
+  color: #fff;
 }
 
-.nav-bar {
-  border: 3px sienna;
-  background-color: rgba(255, 255, 255)
+.demo-login {
+  display: flex;
+  align-items: center;
+    gap: 16px;
+}
+
+.logout-component {
+  margin-left: 24px;
 }
